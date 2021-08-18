@@ -49,12 +49,26 @@ public class Lesson23 {
         productPrices.put("mobile phone", 400);
         productPrices.put("Sourcream", 1);
 
+        productPrices.get("Sourcream"); //1
+
+
         int counterPricesBelow1 = 0;
         for ( Integer price: productPrices.values() ) {
             if ( price <= 1 ) {
                 counterPricesBelow1++;
             }
         }
+
+        int maxValue = 0;
+        String maxProdcutName = "";
+        for (String productName : productPrices.keySet() ) {
+            if( productPrices.get(productName) > maxValue ) {
+                maxValue = productPrices.get(productName);
+                maxProdcutName = productName;
+            }
+        }
+
+        System.out.println("max price product: " + maxProdcutName + " costs " + maxValue + "EUR");
 
         System.out.println("There are " + counterPricesBelow1 + " below 1 eur");
     }
